@@ -1,6 +1,6 @@
 site:
   name: SertifVault
-  site: 'https://agent-tools-sertifvault.vercel.app'
+  site: 'https://kayzenn123.github.io/agent-tools-sertifvault'
   base: '/'
   trailingSlash: false
 

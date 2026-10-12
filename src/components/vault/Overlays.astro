@@ -1,0 +1,44 @@
+---
+// Overlay: dialog detail entri + toast + tombol gerak + kursor kustom.
+import { vic } from './icons.ts';
+---
+
+<dialog id="entry-dialog" class="entry-dialog" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <p class="font-accent text-sm tracking-[0.2em] uppercase" style="color: var(--sv-accent)">
+      Entri <span id="dlg-num">№ 000</span>
+    </p>
+    <button type="button" id="dlg-close" class="btn btn-sm btn-ghost" aria-label="Tutup detail entri" data-cursor="link">
+      <span set:html={vic('x', 'w-4 h-4')}></span>
+    </button>
+  </div>
+  <div id="dlg-body" class="p-6 md:p-8"></div>
+  <div class="flex flex-wrap gap-3 border-t-2 p-4 md:p-6 no-print" style="border-color: var(--sv-text); background: var(--sv-surface)">
+    <button type="button" id="dlg-file" class="btn btn-sm hidden" data-cursor="link">
+      <span set:html={vic('file', 'w-4 h-4')}></span> Buka lampiran
+    </button>
+    <button type="button" id="dlg-link" class="btn btn-sm btn-ghost" data-cursor="link">
+      <span set:html={vic('link', 'w-4 h-4')}></span> Salin tautan entri
+    </button>
+    <button type="button" id="dlg-delete" class="btn btn-sm btn-ghost" data-cursor="link">
+      <span set:html={vic('trash', 'w-4 h-4')}></span> Cabut entri
+    </button>
+  </div>
+</dialog>
+
+<div id="toast" class="toast no-print" role="status" aria-live="polite"></div>
+
+<button
+  type="button"
+  id="motion-toggle"
+  class="btn btn-sm no-print"
+  aria-pressed="true"
+  data-cursor="link"
+  style="position: fixed; right: 16px; bottom: 16px; z-index: 70;"
+>
+  <span set:html={vic('motion', 'w-4 h-4')}></span>
+  <span id="motion-label">Gerak: nyala</span>
+</button>
+
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>

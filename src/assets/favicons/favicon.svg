@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- SertifVault: buku kamus 8-bit di atas kertas sepia -->
+  <rect width="64" height="64" fill="#c9a06b"/>
+  <rect x="14" y="10" width="36" height="44" fill="#f4e6c8"/>
+  <rect x="14" y="10" width="36" height="44" fill="none" stroke="#2b1d12" stroke-width="4"/>
+  <rect x="14" y="10" width="8" height="44" fill="#2b1d12"/>
+  <rect x="28" y="18" width="16" height="5" fill="#2b1d12"/>
+  <rect x="28" y="27" width="12" height="4" fill="#2b1d12"/>
+  <rect x="28" y="34" width="14" height="4" fill="#2b1d12"/>
+  <rect x="28" y="41" width="9" height="9" fill="#19b8d8"/>
+  <rect x="28" y="41" width="9" height="9" fill="none" stroke="#2b1d12" stroke-width="2"/>
+</svg>

@@ -1,0 +1,44 @@
+---
+// Hero — headword raksasa "KAMUS PRESTASI" (flip 3D per huruf via JS),
+// sub persona Pak Kamus, CTA magnetic, statistik mini (diisi JS).
+import { vic } from './icons.ts';
+---
+
+<section class="curtain relative overflow-hidden" aria-labelledby="hero-h">
+  <div class="mx-auto max-w-6xl px-5 pt-28 pb-10 md:pt-36 md:pb-14">
+    <p class="eyebrow">
+      Edisi 2026 · Kamus prestasi pribadi
+    </p>
+    <h1 id="hero-h" class="headword mt-4" style="font-size: clamp(3.2rem, 13vw, 9rem)" aria-label="Kamus Prestasi">
+      <span class="hw-line block" data-hw="KAMUS"></span>
+      <span class="hw-line block" data-hw="PRESTASI"></span>
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed">
+      Setiap piagam yang kamu menangkan adalah <span class="stabilo font-bold">satu kata</span> dalam
+      kamus prestasimu. SertifVault mencatatnya sebagai entri, memetakannya seperti peta
+      permainan, dan menyiapkannya sekali klik untuk beasiswa berikutnya.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="#tambah" class="btn btn-pop magnetic" data-cursor="link">
+        <span set:html={vic('plus', 'w-5 h-5')}></span> Catat entri baru
+      </a>
+      <a href="#peta" class="btn btn-ghost magnetic" data-cursor="link">
+        <span set:html={vic('eye', 'w-5 h-5')}></span> Jelajahi peta
+      </a>
+    </div>
+    <dl class="mt-12 grid grid-cols-3 gap-4 max-w-xl" aria-label="Ringkasan arsip">
+      <div class="border-2 p-4" style="border-color: var(--sv-text); background: var(--sv-surface)">
+        <dt class="text-xs uppercase tracking-widest font-bold" style="color: var(--sv-text)">Entri</dt>
+        <dd class="stat-num" data-stat="total">–</dd>
+      </div>
+      <div class="border-2 p-4" style="border-color: var(--sv-text); background: var(--sv-surface)">
+        <dt class="text-xs uppercase tracking-widest font-bold" style="color: var(--sv-text)">Tahun ini</dt>
+        <dd class="stat-num" data-stat="thisYear">–</dd>
+      </div>
+      <div class="border-2 p-4" style="border-color: var(--sv-text); background: var(--sv-surface)">
+        <dt class="text-xs uppercase tracking-widest font-bold" style="color: var(--sv-text)">Jenis</dt>
+        <dd class="stat-num" data-stat="cats">–</dd>
+      </div>
+    </dl>
+  </div>
+</section>

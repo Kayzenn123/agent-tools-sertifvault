@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Header from '~/components/widgets/Header.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
+import { headerData } from '~/navigation';
+import { SITE, I18N } from 'astrowind:config';
+
+import Hero from '~/components/vault/Hero.astro';
+import Marquee from '~/components/vault/Marquee.astro';
+import MapSection from '~/components/vault/MapSection.astro';
+import ListSection from '~/components/vault/ListSection.astro';
+import FormSection from '~/components/vault/FormSection.astro';
+import ExportSection from '~/components/vault/ExportSection.astro';
+import Overlays from '~/components/vault/Overlays.astro';
+
+import '~/assets/styles/vault.css';
+
+const metadata = {
+  title: 'SertifVault — Kamus Prestasi',
+  description:
+    'Brankas sertifikat pribadimu: arsipkan piagam lomba, beasiswa, dan kursus sebagai entri kamus, jelajahi di peta 8-bit, ekspor sekali klik.',
+  ignoreTitleTemplate: true,
+};
+
+const organizationId = `${SITE?.site}/#organization`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE?.site}/#website`,
+    name: SITE?.name,
+    url: SITE?.site,
+    inLanguage: I18N?.language,
+    publisher: { '@id': organizationId },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    '@id': organizationId,
+    name: 'SertifVault — Kamus Prestasi',
+    url: SITE?.site,
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Web',
+    inLanguage: I18N?.language,
+    description: metadata.description,
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <StructuredData slot="head" schema={structuredData} />
+  <Fragment slot="announcement" />
+  <Header {...headerData} isSticky slot="header" />
+
+  <a href="#peta" class="skip-link no-print">Lompat ke peta entri</a>
+
+  <Hero />
+  <Marquee />
+  <MapSection />
+  <div class="tear no-print" aria-hidden="true"></div>
+  <ListSection />
+  <div class="tear no-print" aria-hidden="true"></div>
+  <FormSection />
+  <div class="tear no-print" aria-hidden="true"></div>
+  <ExportSection />
+  <Overlays />
+
+  <script>
+    import '../scripts/vault/app.js';
+  </script>
+</Layout>

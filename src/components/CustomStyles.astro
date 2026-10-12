@@ -1,0 +1,58 @@
+---
+// SertifVault — Kamus Prestasi · token desain (seed 2026-10-12).
+// Palet: monochrome hue 30 (kertas kamus sepia), mode mid, pop stabilo cyan.
+// Font: --font-display (Kaisei Tokumin) / --font-body (Chiron GoRound TC) /
+// --font-accent (Tilt Prism) dari Astro Fonts API.
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: var(--font-body);
+    --aw-font-serif: var(--font-display);
+    --aw-font-heading: var(--font-display);
+
+    /* Kertas kamus */
+    --sv-bg: oklch(0.72 0.11 32);
+    --sv-surface: oklch(0.65 0.1 32);
+    --sv-surface-2: oklch(0.6 0.095 32);
+    --sv-text: oklch(0.18 0.035 32);
+    --sv-muted: oklch(0.30 0.04 32);
+    --sv-line: oklch(0.42 0.05 32);
+    /* Tinta stempel */
+    --sv-accent: oklch(0.52 0.155 38);
+    --sv-accent-2: oklch(0.44 0.115 30);
+    /* Stabilo cyan — satu-satunya warna dingin */
+    --sv-pop: oklch(0.76 0.19 195);
+    --sv-pop-ink: oklch(0.22 0.05 200);
+
+    --aw-color-primary: var(--sv-accent);
+    --aw-color-secondary: var(--sv-accent-2);
+    --aw-color-accent: var(--sv-pop);
+
+    --aw-color-text-heading: var(--sv-text);
+    --aw-color-text-default: var(--sv-text);
+    --aw-color-text-muted: var(--sv-muted);
+    --aw-color-bg-page: var(--sv-bg);
+
+    ::selection {
+      background: var(--sv-pop);
+      color: var(--sv-pop-ink);
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body), sans-serif;
+    background: var(--sv-bg);
+    color: var(--sv-text);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--sv-pop);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+</style>

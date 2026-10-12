@@ -1,0 +1,26 @@
+---
+// Marquee — 2 band berlawanan arah + skew mengikuti velocity scroll (JS).
+const bandA = ['entri', 'definisi', 'kelas kata', 'rak', 'inventaris', 'stempel', 'cap lulus', 'juara', 'beasiswa', 'sertifikat', 'transkrip', 'portofolio', 'arsip', 'edisi ke-1'];
+const bandB = ['catat', 'susun', 'petakan', 'sorot', 'ekspor', 'arsipkan', 'rayakan', 'ulangi'];
+---
+
+<div class="no-print" aria-hidden="true">
+  <div class="marquee marquee-a border-y-2 py-3" style="border-color: var(--sv-text); background: var(--sv-surface)">
+    <div class="marquee-track text-2xl md:text-3xl">
+      {[0, 1].map(() => (
+        <span class="inline-flex">
+          {bandA.map((t) => <span class="marquee-term">{t} <span aria-hidden="true">◆</span></span>)}
+        </span>
+      ))}
+    </div>
+  </div>
+  <div class="marquee marquee-b border-b-2 py-2" style="border-color: var(--sv-text); background: var(--sv-text); color: var(--sv-bg)">
+    <div class="marquee-track text-lg md:text-xl uppercase tracking-widest">
+      {[0, 1].map(() => (
+        <span class="inline-flex">
+          {bandB.map((t) => <span class="marquee-term">{t} <span aria-hidden="true">◆</span></span>)}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
